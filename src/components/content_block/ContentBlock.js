@@ -1,10 +1,10 @@
 import './ContentBlock.css';
 
+export default function ContentBlock({id, title, linedText, number, imgSrc, isFlipped }) {
 
 
-export default function ContentBlock({ title, linedText, number, imgSrc, isFlipped }) {
     return (
-        <div className={isFlipped ? 'content-block flipped' : 'content-block'}>
+        <div id={id} className={isFlipped ? 'content-block flipped' : 'content-block'}>
 
             <div className='block-content'>
                 <span className='block-number'>03</span>

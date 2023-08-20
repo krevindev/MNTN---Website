@@ -66,9 +66,30 @@
     z-index: 1;
 }
 
-.content-block .block-content .block-inner-content .block-title-container {
+.content-block .block-title-container {
     font-size: 2rem;
     color: white;
+
+    overflow: hidden;
+}
+
+.content-block .block-title-container h1 {
+    transform: translateY(100%);
+    animation: blockTitleAnim .5s forwards ease-out;
+    animation-delay: 5s;
+    opacity: 0;
+}
+
+@keyframes blockTitleAnim {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .content-block .lined-text-container {

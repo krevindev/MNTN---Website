@@ -6,6 +6,7 @@ import './App.css';
 import Header from './components/header/Header';
 import HeroSection from './sections/hero/HeroSection';
 import Section2 from './sections/section2/Section2';
+import NavIndicator from './components/nav_indicator/NavIndicator';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
     <div className="App">
       <Header />
 
-      <Parallax pages={3} style={{ top: 0, left: 0 }} className='animation'>
+      <Parallax pages={4} style={{ top: 0, left: 0 }} className='animation'>
 
         <ParallaxLayer offset={0} speed={0}>
           <div
@@ -40,14 +41,15 @@ function App() {
           </div>
         </ParallaxLayer>
 
-        <ParallaxLayer offset={0} speed={1}>
+        <ParallaxLayer offset={0} speed={0}>
           <HeroSection />
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={.6}>
+        <ParallaxLayer offset={1} speed={0}>
           <Section2 />
         </ParallaxLayer>
 
       </Parallax>
+      <NavIndicator/>
     </div>
   );
 }

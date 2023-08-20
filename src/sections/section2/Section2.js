@@ -9,13 +9,13 @@ export default function Section2() {
     return (
         <div id='section2'>
             <div className='section2-block-container'>
-                <ContentBlock title='What level of a hiker are you?' linedText='HELLO' imgSrc={img1} />
+                <ContentBlock id='content-block1' title='What level of a hiker are you?' linedText='HELLO' imgSrc={img1} />
             </div>
             <div className='section2-block-container'>
-                <ContentBlock linedText='HELLO' imgSrc={img2} isFlipped={true} />
+                <ContentBlock id='content-block2' linedText='HELLO' imgSrc={img2} isFlipped={true} />
             </div>
             <div className='section2-block-container'>
-                <ContentBlock linedText='HELLO' imgSrc={img3} />
+                <ContentBlock id='content-block3' linedText='HELLO' imgSrc={img3} />
             </div>
         </div>
     )

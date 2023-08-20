@@ -1,0 +1,34 @@
+.lined-text {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.lined-text-stroke {
+    width: 0;
+    height: 2px;
+    background: var(--color1);
+    margin-right: 5%;
+
+    animation: linedTextAnim 1.5s forwards ease-out;
+    opacity: 0;
+}
+
+.lined-text-text {
+    color: var(--color1);
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+@keyframes linedTextAnim {
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        width: 20%;
+    }
+}

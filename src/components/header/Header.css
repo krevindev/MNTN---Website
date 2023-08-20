@@ -1,0 +1,64 @@
+#header {
+    position: fixed;
+    width: 100vw;
+    height: 10vh;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+
+    padding: 0 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+
+    box-sizing: border-box;
+    color: white;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(5px);
+}
+
+.header-part {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    min-width: fit-content;
+
+    padding: 0 10px;
+
+    user-select: none;
+}
+
+#header-nav-container>ul {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+
+    width: fit-content;
+
+    height: 100%;
+}
+
+#header-nav-container>ul>li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+
+    min-width: fit-content;
+
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    padding: 30px;
+    font-size: .8rem;
+    text-align: center;
+}
+
+#header-nav-container>ul>li:hover {}
+
+#header-account-container {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

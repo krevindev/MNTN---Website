@@ -44,7 +44,7 @@ function App() {
         <ParallaxLayer offset={0} speed={0}>
           <HeroSection />
         </ParallaxLayer>
-        <ParallaxLayer offset={1} speed={0}>
+        <ParallaxLayer offset={1} speed={.1}>
           <Section2 />
         </ParallaxLayer>
 

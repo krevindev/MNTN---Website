@@ -5,17 +5,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 
     background: var(--baseColor);
 
     padding-top: 20vh;
+
+    position: relative;
+    min-height: fit-content;
 }
 
 .section2-block-container {
     height: 100vh;
     width: 100vw;
-    margin-bottom: 40vh;
+    margin: 5vh 0 5vh 0;
+    min-height: fit-content;
 
     display: flex;
     justify-content: center;

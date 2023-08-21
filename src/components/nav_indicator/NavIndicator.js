@@ -37,7 +37,28 @@ export default function NavIndicator() {
     ];
 
     const handleClick = (href, index) => {
-        window.location = href;
+
+        const targetSection = document.querySelector(href);
+        const parallaxContainer = document.querySelector('.animation')
+
+
+        try {
+            if ("#" + href === 'hero-section') {
+                parallaxContainer.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        } catch (err) {
+            console.log(err)
+        }
+
+        // window.location = href;
         setActiveIndex(index + 1);
     };
 

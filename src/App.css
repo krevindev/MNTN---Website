@@ -5,15 +5,24 @@
 
 .animation {
   display: flex;
+  min-height: fit-content;
 }
 
 .parallax {
   height: 100vh;
   width: 100%;
+  min-width: 100vw;
+
+  background-size: cover;
+  background-position: left;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
 }
 
 #mountain-parallax {
   height: 200vh;
+
 }
 
 #sky-parallax {}
@@ -23,8 +32,9 @@
 
   max-width: 100vw;
 
-  background-position-x: -100%;
   background-size: cover;
+  background-position: left;
+
   background-repeat: no-repeat;
   position: relative;
   width: 100%;

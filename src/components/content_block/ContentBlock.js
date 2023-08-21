@@ -1,13 +1,15 @@
 import './ContentBlock.css';
 
-export default function ContentBlock({id, title, linedText, number, imgSrc, isFlipped }) {
+import arrowImg from '../../res/svg/down-arrow.svg';
+
+export default function ContentBlock({ id, title, linedText, number, imgSrc, isFlipped, details }) {
 
 
     return (
         <div id={id} className={isFlipped ? 'content-block flipped' : 'content-block'}>
 
             <div className='block-content'>
-                <span className='block-number'>03</span>
+                <span className='block-number'>{number}</span>
                 <div className='block-inner-content'>
                     <div className='lined-text-container'>
                         <div className="lined-text">
@@ -21,12 +23,10 @@ export default function ContentBlock({id, title, linedText, number, imgSrc, isFl
                         <h1>{title || "What level of a hiker are you?"}</h1>
                     </div>
                     <div className='block-details-container'>
-                        <p>
-                            Determining what level of a hiker you are can be an important tool when planning future hikes. This hiking level guide will help you plan hikes according to different hike ratings set by various website like All Trails and Modern Hiker. What type of hiker are you -- novice, moderate, advanced moderate, expert, or expert backpacker?
-                        </p>
+                        <p>{details}</p>
                     </div>
                     <div className='block-readmore-container'>
-                        <span>Read More</span>
+                        <span>read more <img src={arrowImg} /></span>
                     </div>
                 </div>
             </div>

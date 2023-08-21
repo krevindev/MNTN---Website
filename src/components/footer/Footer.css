@@ -1,0 +1,35 @@
+#footer {
+    height: 15%;
+    min-height: 20vh;
+    width: 100vw;
+    background: var(--baseColor);
+
+    bottom: 0;
+
+    border: 2px solid violet;
+
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex-wrap: wrap;
+}
+
+.footer-part {
+    flex-grow: 1;
+    border: 1px solid red;
+
+    min-width: 200px;
+}
+.footer-part:nth-child(1){
+    flex: 2;
+}
+
+#social-container{
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: green;
+    width: 5vw;
+    height: 40vh;
+}

@@ -34,7 +34,7 @@ function App() {
           <div
             className='parallax'
             id='front-parallax'
-            style={{ background: `url(${frontHumanImg})` }}
+            style={{ backgroundImage: `url(${frontHumanImg})` }}
           >
             <div className='cover' />
             <div className='cover' />
@@ -49,7 +49,10 @@ function App() {
         </ParallaxLayer>
 
       </Parallax>
-      <NavIndicator/>
+      <NavIndicator />
+      <div id='social-container'>
+      </div>
+
     </div>
   );
 }

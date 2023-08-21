@@ -2,11 +2,11 @@ import './ContentBlock.css';
 
 import arrowImg from '../../res/svg/down-arrow.svg';
 
-export default function ContentBlock({ id, title, linedText, number, imgSrc, isFlipped, details }) {
+export default function ContentBlock({key, id, title, linedText, number, imgSrc, isFlipped, details }) {
 
 
     return (
-        <div id={id} className={isFlipped ? 'content-block flipped' : 'content-block'}>
+        <div key={key} id={id} className={isFlipped ? 'content-block flipped' : 'content-block'}>
 
             <div className='block-content'>
                 <span className='block-number'>{number}</span>

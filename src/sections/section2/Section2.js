@@ -36,6 +36,7 @@ export default function Section2() {
                 contentBlocksData.map((blockData, index) => (
                     <div className='section2-block-container'>
                         <ContentBlock
+                            key={index}
                             id={'content-block' + (index + 1)}
                             number={"0" + (index + 1)}
                             title={blockData.title}
@@ -47,7 +48,7 @@ export default function Section2() {
                     </div>
                 ))
             }
-            <Footer/>
+            <Footer />
         </div>
     )
 }

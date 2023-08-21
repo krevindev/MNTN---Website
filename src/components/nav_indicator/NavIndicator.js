@@ -3,19 +3,13 @@ import './NavIndicator.css';
 
 export default function NavIndicator() {
 
+
+
     const [activeSection, setActiveSection] = useState();
+    const sections = Array.from(document.querySelectorAll('.section2-block-container'));
 
     const [indiTop, setIndiTop] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
-
-    const handleIntersection = entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const parentElementId = entry.target.parentElement.id;
-                setActiveSection(parentElementId);
-            }
-        });
-    };
 
     const navIndiData = [
         {
@@ -35,6 +29,10 @@ export default function NavIndicator() {
             href: 'content-block3'
         }
     ];
+
+    useEffect(() => {
+        console.log(sections);
+    }, [sections]);
 
     const handleClick = (href, index) => {
 
@@ -61,6 +59,10 @@ export default function NavIndicator() {
         // window.location = href;
         setActiveIndex(index + 1);
     };
+
+    useEffect(() => {
+        console.log(activeSection)
+    });
 
     useEffect(() => {
         setIndiTop(activeIndex == 1 ? 1 : activeIndex == 2 ? 30 : activeIndex == 3 ? 60 : activeIndex == 4 ? 80 : 0);

@@ -14,6 +14,7 @@ export default function HeroSection() {
         setSection2(document.querySelector('#section2'))
     }, [document.querySelector('#section2')]);
 
+    // handle scrolldown click
     const handleClick = () => {
         section2.scrollIntoView({
             block: 'start',

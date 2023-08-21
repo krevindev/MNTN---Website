@@ -25,9 +25,9 @@ export default function Footer() {
                 </div>
             </div>
             {
-                footerMoreData.map(moreData => (
+                footerMoreData.map((moreData, index) => (
                     <div className='footer-part'>
-                        <FooterMore title={moreData.title} list={moreData.list} />
+                        <FooterMore key={index} title={moreData.title} list={moreData.list} />
                     </div>
                 ))
             }
@@ -35,9 +35,9 @@ export default function Footer() {
     )
 }
 
-function FooterMore({ title, list }) {
+function FooterMore({ key, title, list }) {
     return (
-        <div className='footer-more'>
+        <div key={key} className='footer-more'>
             <h4>{title}</h4>
             {
                 list.map(l => <h5>{l}</h5>)

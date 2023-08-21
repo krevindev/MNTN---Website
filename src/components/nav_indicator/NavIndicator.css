@@ -21,23 +21,26 @@
 
 #nav-indi-list-container {
     width: 50%;
+    display: flex;
+    justify-content: flex-end;
 }
 
 #nav-indi-list-container ul {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-end;
     height: 100%;
 
     width: fit-content;
-
-    margin-right: 3vw;
 
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 #nav-indi-list-container ul li{
     cursor: pointer;
+    font-size: .8rem;
+    width: 100%;
+    text-align: right;
 }
 
 #nav-indi-bar-container {

@@ -55,3 +55,10 @@
 .animation {
   background: #0B1D26;
 }
+
+
+.animation::-webkit-scrollbar {
+  background: none;
+  opacity: 0;
+  display: none;
+}

@@ -62,3 +62,7 @@
 #header-account-container {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+#header-logo-container h1 {
+    font-size: 1.5rem;
+}

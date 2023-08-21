@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(to bottom, rgba(0, 0, 0, .5), rgba(0, 0, 0, 0));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0));
     z-index: 100;
 }
 
@@ -29,7 +29,7 @@
 
 #hero-main-content h1 {
     font-size: 4rem;
-    margin: 5% 0;
+    margin: 3% 0;
 }
 
 #hero-main-content span {
@@ -47,4 +47,16 @@
 #hero-main-content>span>img {
     height: 20px;
     margin: 10px;
+
+    animation: scrollDownArrowAnim .5s alternate infinite;
+}
+
+@keyframes scrollDownArrowAnim {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(3px);
+    }
 }

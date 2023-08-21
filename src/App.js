@@ -7,6 +7,7 @@ import Header from './components/header/Header';
 import HeroSection from './sections/hero/HeroSection';
 import Section2 from './sections/section2/Section2';
 import NavIndicator from './components/nav_indicator/NavIndicator';
+import SocialsFollow from './components/socials_follow/SocialsFollow';
 
 function App() {
 
@@ -50,9 +51,7 @@ function App() {
 
       </Parallax>
       <NavIndicator />
-      <div id='social-container'>
-      </div>
-
+      <SocialsFollow/>
     </div>
   );
 }

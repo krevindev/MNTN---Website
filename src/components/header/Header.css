@@ -63,6 +63,12 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+#header-account-container img {
+    height: 20px;
+    max-height: 90%;
+    margin-right: 5px;
+}
+
 #header-logo-container h1 {
     font-size: 1.5rem;
 }

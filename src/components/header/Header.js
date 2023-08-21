@@ -1,5 +1,7 @@
 import './Header.css';
 
+import userIcon from '../../res/svg/user-icon.svg';
+
 export default function Header() {
 
     return (
@@ -15,6 +17,7 @@ export default function Header() {
                 </ul>
             </div>
             <div className='header-part' id='header-account-container'>
+                <img src={userIcon} />
                 <h5>Account</h5>
             </div>
         </div>

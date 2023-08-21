@@ -6,8 +6,6 @@
 
     bottom: 0;
 
-    border: 2px solid violet;
-
     display: flex;
     justify-content: stretch;
     align-items: stretch;
@@ -16,20 +14,60 @@
 
 .footer-part {
     flex-grow: 1;
-    border: 1px solid red;
 
     min-width: 200px;
-}
-.footer-part:nth-child(1){
-    flex: 2;
+
+    padding: 2%;
+
+    box-sizing: border-box;
+    color: white;
 }
 
-#social-container{
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    background: green;
-    width: 5vw;
-    height: 40vh;
+.footer-part:not(.footer-part:nth-child(1)) {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-part:nth-child(1) {
+    flex: 2;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-part:nth-child(1) h1 {
+    margin-bottom: 2%;
+}
+
+.footer-part:nth-child(1) p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8rem;
+    width: 60%;
+}
+
+.footer-part:nth-child(1) .upper {
+    width: 100%;
+}
+
+.footer-part:nth-child(1) .lower {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: .8rem;
+    color: gray;
+}
+
+.footer-more {
+    height: fit-content;
+
+    display: flex;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.footer-more h4 {
+    color: var(--color1);
+    margin-bottom: 5%;
+}
+.footer-more h5{
+    margin: 5% 0;
+    font-weight: 100;
 }

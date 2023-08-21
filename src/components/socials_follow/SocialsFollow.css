@@ -1,0 +1,47 @@
+#social-container {
+    position: fixed;
+    left: 0%;
+    top: 50%;
+    transform: translate(-30%, -50%) rotate(90deg);
+
+
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+
+    height: fit-content;
+}
+
+.social-part {
+    height: fit-content;
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: stretch;
+    padding: 5px;
+}
+
+.social-part>img {
+    width: 20px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+}
+
+.social-part:nth-child(1) {
+    flex: 3;
+    min-width: fit-content;
+    width: fit-content;
+}
+
+.social-part:nth-child(1) h5 {
+
+    height: 100%;
+    width: fit-content;
+    min-width: fit-content;
+
+    color: white;
+    transform-origin: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

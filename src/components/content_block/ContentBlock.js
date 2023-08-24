@@ -26,7 +26,7 @@ export default function ContentBlock({key, id, title, linedText, number, imgSrc,
                         <p>{details}</p>
                     </div>
                     <div className='block-readmore-container'>
-                        <span>read more <img src={arrowImg} /></span>
+                        <span>read more <img src={arrowImg} loading='lazy' /></span>
                     </div>
                 </div>
             </div>

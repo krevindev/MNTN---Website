@@ -3,13 +3,10 @@ import './NavIndicator.css';
 
 export default function NavIndicator() {
 
-
-
-    const [activeSection, setActiveSection] = useState();
-    const sections = Array.from(document.querySelectorAll('.section2-block-container'));
-
     const [indiTop, setIndiTop] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
+
+    const [contentBlocks, setContentBlocks] = useState([]);
 
     const navIndiData = [
         {
@@ -31,13 +28,52 @@ export default function NavIndicator() {
     ];
 
     useEffect(() => {
-        console.log(sections);
-    }, [sections]);
+        const initialContentBlocks = Array.from(document.querySelectorAll('.content-block')).reverse();
+        const heroSection = document.querySelector('#hero-section');
+        const combinedBlocks = [...initialContentBlocks, heroSection].reverse();
+
+        setContentBlocks(combinedBlocks.reverse());
+        console.log(contentBlocks)
+    }, []);
+
+    useEffect(() => {
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        }
+        const handleIntersection = entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveIndex(Array.from(contentBlocks).indexOf(entry.target));
+                    console.log(Array.from(contentBlocks).indexOf(entry.target));
+                    console.log(entry.target.id);
+                }
+            });
+        }
+        const observer = new IntersectionObserver(handleIntersection, observerOptions);
+
+        contentBlocks.forEach(cBlock => {
+            if (cBlock) {
+                observer.observe(cBlock);
+            }
+        });
+
+        return () => contentBlocks.forEach(block => {
+            if (block) {
+                observer.unobserve(block);
+            }
+        })
+
+    }, []);
+
+
+
 
     const handleClick = (href, index) => {
 
         const targetSection = document.querySelector(href);
-        const parallaxContainer = document.querySelector('.animation')
+        const parallaxContainer = document.querySelector('.animation');
 
 
         try {
@@ -61,11 +97,7 @@ export default function NavIndicator() {
     };
 
     useEffect(() => {
-        console.log(activeSection)
-    });
-
-    useEffect(() => {
-        setIndiTop(activeIndex == 1 ? 1 : activeIndex == 2 ? 30 : activeIndex == 3 ? 60 : activeIndex == 4 ? 80 : 0);
+        setIndiTop(activeIndex == 0 ? 1 : activeIndex == 1 ? 30 : activeIndex == 2 ? 60 : activeIndex == 3 ? 80 : 0);
     }, [activeIndex]);
 
     return (

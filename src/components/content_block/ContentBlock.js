@@ -31,7 +31,7 @@ export default function ContentBlock({key, id, title, linedText, number, imgSrc,
                 </div>
             </div>
             <div className='block-content'>
-                <img src={imgSrc} loading="lazy" />
+                <img src={imgSrc}/>
             </div>
         </div>
     )

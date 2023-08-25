@@ -1,12 +1,20 @@
 import { useEffect, useState } from 'react';
 import './NavIndicator.css';
 
+const getBlocks = () => {
+    const initialContentBlocks = Array.from(document.querySelectorAll('.content-block')).reverse();
+    const heroSection = document.querySelector('#hero-section');
+    const combinedBlocks = [...initialContentBlocks, heroSection].reverse();
+
+    return combinedBlocks;
+}
+
 export default function NavIndicator() {
 
     const [indiTop, setIndiTop] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
 
-    const [contentBlocks, setContentBlocks] = useState([]);
+    const [contentBlocks, setContentBlocks] = useState(getBlocks());
 
     const navIndiData = [
         {
@@ -28,13 +36,8 @@ export default function NavIndicator() {
     ];
 
     useEffect(() => {
-        const initialContentBlocks = Array.from(document.querySelectorAll('.content-block')).reverse();
-        const heroSection = document.querySelector('#hero-section');
-        const combinedBlocks = [...initialContentBlocks, heroSection].reverse();
-
-        setContentBlocks(combinedBlocks.reverse());
-        console.log(contentBlocks)
-    }, []);
+        if(contentBlocks.length < 4) setContentBlocks(getBlocks())
+    }, [contentBlocks]);
 
     useEffect(() => {
         const observerOptions = {
@@ -45,19 +48,17 @@ export default function NavIndicator() {
         const handleIntersection = entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    setActiveIndex(Array.from(contentBlocks).indexOf(entry.target));
-                    console.log(Array.from(contentBlocks).indexOf(entry.target));
-                    console.log(entry.target.id);
+                    setActiveIndex(Array.from(contentBlocks).indexOf(entry.target) + 1);
                 }
             });
         }
         const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-        contentBlocks.forEach(cBlock => {
-            if (cBlock) {
-                observer.observe(cBlock);
-            }
-        });
+            contentBlocks.forEach(cBlock => {
+                if (cBlock) {
+                    observer.observe(cBlock);
+                }
+            });
 
         return () => contentBlocks.forEach(block => {
             if (block) {
@@ -65,7 +66,7 @@ export default function NavIndicator() {
             }
         })
 
-    }, []);
+    }, [contentBlocks]);
 
 
 
@@ -97,7 +98,7 @@ export default function NavIndicator() {
     };
 
     useEffect(() => {
-        setIndiTop(activeIndex == 0 ? 1 : activeIndex == 1 ? 30 : activeIndex == 2 ? 60 : activeIndex == 3 ? 80 : 0);
+        setIndiTop(activeIndex == 1 ? 1 : activeIndex == 2 ? 30 : activeIndex == 3 ? 60 : activeIndex == 4 ? 80 : 0);
     }, [activeIndex]);
 
     return (

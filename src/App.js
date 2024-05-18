@@ -1,7 +1,7 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax';
-import frontHumanImg from './res/svg/idk1.svg';
-import mountainImg from './res/svg/idk2.svg';
-import skyImg from './res/svg/idk3.svg';
+import frontHumanImg from './res/svg/idk1.png';
+import mountainImg from './res/svg/idk2.png';
+import skyImg from './res/svg/idk3.png';
 import './App.css';
 import Header from './components/header/Header';
 import HeroSection from './sections/hero/HeroSection';
